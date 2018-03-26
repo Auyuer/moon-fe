@@ -1,0 +1,267 @@
+/*整个页面*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Microsoft YaHei","Arial";
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333;
+}
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+.nav-header .entrance .logo-href>.logo {
+    display: inline-block;
+    background-image: url(../images/logo.jpg);
+    width: 89px;
+    height: 29px;
+    vertical-align: middle;
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+li {
+    line-height: 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: -webkit-match-parent;
+}
+#allmap {
+    margin-left: 210px;
+    height: 100%;
+    overflow: hidden;
+    zoom:1;
+    position:relative;
+}
+.page {
+    padding: 40px;
+    padding-top: 60px;
+}
+/*导航栏*/
+.nav_header {
+    height: 70px;
+    line-height: 70px;
+    color: #c2c2c2;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #3c3d45;
+    min-width: 1200px;
+    font-size: 14px;
+}
+.nav_header .entrance{
+    display: inline-block
+}
+.nav_header .mainnav-wrapper {
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+}
+.nav_header .mainnav-wrapper li {
+    display: inline-block;
+}
+.nav_header .mainnav-wrapper>li a {
+    height: 70px;
+    line-height: 70px;
+    padding: 0 25px;
+    color: #b0b0b0;
+    display: inline-block;
+}
+/*logo*/
+.nav_header .entrance .logo-href {
+    display: inline-block;
+    width: 210px;
+    height: 70px;
+    line-height: 70px;
+    padding-left: 15px;
+    background-color: #fa8919;
+    color: #fff;
+    font-size: 16px;
+}
+.logo img {
+    width:50px;
+    height:50px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+/*地图*/
+#map_canvas {
+    height:100%;
+    margin-left:230px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+/*显示检索结果面板*/
+#showPanelBtn{
+    position:absolute;
+    font-size:14px;
+    top:50%;
+    margin-top:-95px;
+    right:0;
+    width:20px;
+    height:170px;
+    padding:10px 10px;
+    color:#999;
+    cursor:pointer;
+    text-align:center;
+    background:rgba(255,255,255,0.9);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    font-family:'微软雅黑';
+    font-weight:bold;
+}
+/*此处用于展示覆盖物信息面板*/
+#panelWrap{
+    width:0px;
+    position: absolute;
+    top:0px;
+    right:0px;
+    height:100%;
+    overflow:auto;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+/*此处用于展示覆盖物信息文字*/
+#showOverlayInfo{
+    width:20px;
+    height:200px;
+    margin:-100px 0 0 -10px;
+    color:#999;
+    position:absolute;
+    opacity:0.5;
+    top:50%;
+    left:50%;
+}
+#panel{
+    position:absolute;
+}
+/*绘制工具界面*/
+#result {
+    border-left:1px dotted #999;
+    height:100%;
+    width:190px;
+    margin-top:85px;
+    padding-left:20px;
+    position:absolute;
+    top:0px;
+    left:0px;
+    font-size:12px;
+}
+dl,dt,dd,ul,li{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+p{
+    font-size:12px;
+}
+dt{
+    font-size:14px;
+    font-family:"微软雅黑";
+    font-weight:bold;
+    border-bottom:1px dotted #000;
+    padding:5px 0 5px 5px;
+    margin:5px 0;
+}
+dd{
+    padding:5px 0 0 5px;
+}
+li{
+    line-height:28px;
+}
+.navbar-brand{
+    font-size: 32px
+}
+
+/*鼠标悬浮去掉下划线*/
+.navbar-brand:hover {
+    text-decoration: none;
+}
+.navbar-header{
+    width:200px;
+    display:inline-block;
+    float:left;
+    font-size:35px;
+    height:40px;
+    line-height:40px;
+    text-align:center
+}
+#chart_cancelRatio{
+    margin-bottom:50px;
+}
+
+/*跳转后表格样式*/
+#example th{
+    text-align:center;
+}
+.tableData{
+    width:80%;
+    margin:auto;
+}
+.map_baidu{
+   height:100%;
+    margin-top:70px;
+}
+/*保存地理围栏数据弹窗*/
+#geo_data{
+    position:absolute;
+    width:500px;
+    background:#fa8919;
+    height:400px;
+    left:50%;
+    top:50%;
+    margin-top:-200px;
+    margin-left:-200px;
+    text-align:center;
+    line-height:50px;
+    padding-top:20px;
+    border-radius:28px;
+    box-shadow:10px 10px 10px #6f6862;
+    z-index:999;
+}
+div#geo_data label{
+    font-size:16px;
+    font-family:"微软雅黑";
+}
+div#geo_data div input{
+    height:30px;
+    margin-left:10px;
+    width:225px;
+}
+div#geo_data h2{
+    margin-bottom:15px;
+}
+.select_type{
+    height:30px;
+    margin-left:10px;
+    width:225px;
+}
+.geo_type{
+    font-size:16px;
+}
+#btn_yes,#btn_no{
+    width:80px;
+    height:30px;
+    line-height:25px;
+    border-radius:7px;
+}
+.geo_btn{
+    margin-top:10px;
+}
+/*数据弹窗显示时中间夹层，禁止其他操作*/
+#cover{
+    width:100%;
+    height:100%;
+    background:#443f3f80;
+    z-index:9;
+    position:absolute;
+    top:0;
+    display:none;
+}

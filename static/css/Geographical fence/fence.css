@@ -1,0 +1,131 @@
+body{
+    background:white;
+}
+/*search功能样式*/
+
+/*form表单样式*/
+#form_search{
+    margin:auto;
+    margin-top:120px;
+    width:843px;
+    font-size:14px;
+    line-height:60px
+}
+/*form下的input样式*/
+#form_search input,#form_search select{
+    width:200px;
+    height:30px;
+    margin-left:10px;
+    font-size:14px;
+    margin-right:40px;
+    border-radius:5px;
+}
+/*btn_search 为search按钮样式*/
+.search{
+    width: 62px;
+    height:30px;
+    line-height:25px;
+    font-size:14px;
+    border-radius:5px;
+    background:#fa8919 !important;
+    margin-left:75px !important;
+    box-shadow:5px 5px 5px #777 !important;
+    color:white !important;
+    border:2px #af57008c solid !important;
+}
+/*地理围栏表格*/
+#tab_fence{
+    margin:auto;
+    margin-top:20px;
+    width:95%;
+}
+/*按钮*/
+.btn_fence{
+    width:120px;
+}
+.orange{
+    background:#fa8919
+}
+
+/*分页*/
+.pager{
+    height:60px;
+    line-height:30px;
+    font-size: 12px;
+    margin: 25px 0;
+    text-align: center;
+    color: #333;
+    overflow: hidden;
+}
+.pager a{
+    border:1px solid #333;
+    color:#333;
+    margin:0px 5px;
+    padding:5px 8px;
+    text-decoration: none;
+}
+.pager a:hover,.pager a.active{
+    background-color:#fa8919;
+    border-color:white;
+    color:#FFF;
+}
+.pager a.disabled{
+    color:#C8CDD2;
+    cursor:auto;
+}
+ul, li{
+    list-style: none;
+}
+#wrapper{
+    width: 95%;
+    margin: 20px auto;
+}
+.data-container{
+    margin-top: 5px;
+}
+.data-container ul{
+    padding: 0;
+    margin: 0;
+}
+.data-container li{
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    background: #66677c;
+    color: #fff;
+}
+.paginationjs-pages li {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: white;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+
+/*分页TEST*/
+.page-case{
+    background:white;
+    font-size: 0;
+    position: absolute;
+    right: 3%;
+}
+.page-default{
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    width: 45px;
+    height: 30px;
+    line-height:30px;
+    font-size: 10px;
+    text-align: center;
+    border: 1px solid #fa8919;
+    cursor:pointer;
+}
+.page-default:hover{
+    background: rgba(255, 114, 0, 0.42);
+}
+.active-page{
+    background: orange;
+    color: white;
+}

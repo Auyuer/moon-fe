@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no,width=device-width" />
+    <!-- #include file="./head.html" -->
+    <link rel="stylesheet" href="/moonlight/static/css/dataTables/jquery.dataTables.min.css"/>
+    <link rel="stylesheet" href="/moonlight/static/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/moonlight/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchInfoWindow/1.4/src/SearchInfoWindow_min.css" />
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />
+
+    <!-- css样式 -->
+    <link rel="stylesheet" href="/moonlight/static/css/moon-fe-static-css.css">
+    <link rel="stylesheet" href="/moonlight/static/css/base.css"/>
+
+    <!-- 百度地图api注册秘钥 -->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=Q0GCLOFTrOQ0C0TfHWtWS1rGIymU3I63"></script>
+    <!-- 加载鼠标绘制工具 -->
+    <script type="text/javascript" src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+    <!-- 加载检索信息窗口 -->
+    <script type="text/javascript" src="http://api.map.baidu.com/library/SearchInfoWindow/1.4/src/SearchInfoWindow_min.js"></script>
+    <!-- 加载热力图图层 -->
+    <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
+
+
+    <script type="text/javascript" src="/moonlight/static/js/jquery.min.js"></script>
+    <!-- echarts组件 -->
+    <script type="text/javascript" src="/moonlight/static/js/chart/echarts.min.js"></script>
+    <script type="text/javascript" src="/moonlight/static/js/chart/bootstrap.min.js"></script>
+    <!-- dataTables组件 -->
+    <script type="text/javascript" src="/moonlight/static/js/dataTables/jquery.dataTables.min.js"></script>
+
+
+
+    <title>Moonlight - 地理订单分析系统</title>
+</head>
+
+<body>
+<!--导航栏-->
+<div class="container body">
+        <div class="nav_menu">
+            <div class="nav_header">
+                <div class="entrance">
+                    <a title="moonlight" class="logo-href" href="#">
+                        <span class="logo">
+                            <img src="../images/logo.png">
+                        </span>
+                        <span class="sep"></span><span style="font-size: 14px;">Moonlight</span>
+                    </a>
+                </div>
+                <ul class="mainnav-wrapper">
+                    <li id="geo" class="active">
+                        <a href="#">实时分析</a>
+                    </li>
+                    <li id="fence">
+                        <a href="/moonlight/static/html/geographical_fence.html">地理围栏</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div class="x_panel" id="left">
+                    <div id="result">
+                        <dl>
+                           <!-- <dt>绘制工具功能</dt>
+                            <ul>
+                                <li><label><input type="radio" name="openClose1" onclick="drawingManager.open()"/>打开</label>  <label><input type="radio" name="openClose1" onclick="drawingManager.close()" checked="checked"/>关闭</label></li>
+                            </ul>-->
+                            </dd>
+                            </dd>
+                            <dt>绘制功能</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="drawmode" onclick="drawingManager.setDrawingMode(BMAP_DRAWING_MARKER)" checked="checked"/>画点
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="drawmode" onclick="drawingManager.setDrawingMode(BMAP_DRAWING_CIRCLE)"/>画圆
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label><input type="radio" name="drawmode" onclick="drawingManager.setDrawingMode(BMAP_DRAWING_POLYLINE)"/>画折线</label>
+
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="drawmode" onclick="drawingManager.setDrawingMode(BMAP_DRAWING_POLYGON)"/>画多边形
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label>
+                                            <input type="radio" name="drawmode" onclick="drawingManager.setDrawingMode(BMAP_DRAWING_RECTANGLE)"/>画矩形
+                                        </label>
+                                    </li>
+                                </ul>
+                            </dd>
+                            <dt>热力图</dt>
+                            <dd>
+                                <ul>
+                                    <li>
+<!--
+                                        <input type="button" value="获取最后一个覆盖物信息" id="getLastOverLay"/>
+-->
+                                        <input id="btn_headMapOpen" class="btn-danger" type="button" value="热力图已关闭" onclick="openHeatmap()"/>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </dl>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-10 map_baidu">
+                <div id="map_canvas"></div>
+                <script type="text/javascript" src="../js/moon_fe.js"></script>
+                <script type="text/javascript" src="../js/bd_moon_fe.js"></script>
+                <script type="text/javascript" src="../js/chart/jquery-ui.min.js"></script>
+            </div>
+        </div>
+
+    <!-保存地理围栏数据--->
+
+    <div id="cover">
+
+    </div>
+
+    <div id="geo_data" style="display:none">
+       <h2>保存地理围栏数据</h2>
+       <div>
+           <label for="geo_name">地理围栏名称</label>
+           <input value="" id="fence_name" type="text" name="geo_name" placeholder=""/>
+       </div>
+       <div>
+            <label for="geo_group">地理围栏分组</label>
+            <input value="" id="fence_group" type="fence_type" name="geo_group" placeholder=""/>
+        </div>
+        <div>
+            <label for="geo_geo">地理围栏geo</label>
+            <input id="fence_geo" type="text" name="geo_geo" readonly="readonly"/>
+        </div>
+        <div>
+            <label for="geo_type">地理围栏类型</label>
+            <input id="fence_type" type="text" name="geo_type" readonly="readonly"/>
+        </div>
+        <div class="geo_btn">
+            <button id="btn_yes">确认</button>
+            <button id="btn_no">取消</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
