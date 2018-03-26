@@ -314,7 +314,8 @@ function openHeatmap(){
     /*热力图*/
     if(sign == "true"){
         /*sign为true时发送请求*/
-        points = send_get("/data_monitor/moonlight/heatMap").data;
+        //points = send_get("/data_monitor/moonlight/heatMap").data;
+        points = send_get("../mock/热力图数据").data;
         if(!isSupportCanvas()){
             alert('热力图目前只支持有canvas支持的浏览器,您所使用的浏览器不能使用热力图功能~')
         }
