@@ -27,7 +27,7 @@ function getUrlParam(){
 
         /*请求后端接口*/
         //json_data=send_get("/data_monitor/moonlight/circle?point=" + circle_lat + "," + circle_lng + "&radius=" + circle_r);
-        json_data = send_get("../../mock/圈选数据.txt");
+        json_data = send_get("/moonlight/static/mock/circle.txt");
         console.log(json_data);
     }else{
         /*截取url中等号右边的参数*/
@@ -45,7 +45,7 @@ function getUrlParam(){
         }
         url_getSqual=url_getSqual.substring(0,url_getSqual.length-1);
         //json_data=send_get(url_getSqual);
-        json_data = send_get("../../mock/圈选数据.txt");
+        json_data = send_get("/moonlight/static/mock/circle.txt");
         console.log(json_data);
     }
 
