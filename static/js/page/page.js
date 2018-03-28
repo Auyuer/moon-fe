@@ -161,7 +161,7 @@ $(".search").click(function () {
         tableSource += "<tr><th class='delete_id' style='font-weight:normal'>" + dataJson[j].id + "</th><th style='min-width:70px;font-weight:normal'>" + dataJson[j].name + "</th><th style='min-width:70px;font-weight:normal'>" + dataJson[j].group + "</th><th id='fence_type' style='min-width:70px;font-weight:normal'>" + datas_type + "</th><th class='tabData_geo' style='font-weight:normal'>" + dataJson[j].geo + "</th><th style='width:180px;font-weight:normal'>" + dataJson[j].createTime + "</th><th class='btn_fence'><button class='btn_look btn-info'>查看</button><button class='btn_delete btn-danger'>删除</button></th>";
 
     }
-    tableSource += "</tbody></table>";
+    tableSource += "</tbody></tablem >";
     $("#tab_fence").html(tableSource);
     delete_data();
     $("#page-item a.page-default").removeClass("active-page");
