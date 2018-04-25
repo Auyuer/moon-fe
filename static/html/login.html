@@ -2,12 +2,20 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/data_monitor/moonlight/static/images/logo.jpg" type="image/x-icon">
+    <script type="text/javascript" src="/data_monitor/moonlight/static/js/jquery.min.js"></script>
+
+    <!-- css样式 -->
+    <link rel="stylesheet" href="/data_monitor/moonlight/static/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="/data_monitor/moonlight/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/data_monitor/moonlight/static/css/moon-fe-static-css.css"/>
+    <script type="text/javascript" src="/data_monitor/moonlight/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/data_monitor/moonlight/static/js/bd_moon_fe.js"></script>
+
     <title>Moonlight - 地理订单分析系统</title>
     <style>
         body{
-            background:url("../images/login.jpg") no-repeat;
-            background-size:cover;
-            text-align: center;
+            background:url("../images/bd.png");
         }
         h2{
             color: #fa8919;
@@ -15,25 +23,69 @@
             margin-top:13%;
             font-size:35px;
         }
-        #btn{
-            background:#ccc;
-            border-radius: 5px;
-            width:50px;
+        label{
+            font-size:20px;
+            color:#333;
+        }
+        input[type='text'],input[type='password']{
+            display: inline-block;
             height:30px;
-            position:absolute;
-            margin-top:10%;
-            font-size:14px;
+        }
+        input[type='button']{
+            font-size: 14px;
+            height:30px;
+            width:80px;
+            border-radius: 8px;
             box-shadow: 5px 5px 5px #ccc;
+            margin-right:20px;
+        }
+        form{
+            text-align:center;
         }
     </style>
 </head>
 <body>
-<h2>MoonLight可视化订单分析系统</h2>
-<button id ='btn'>login</button>
+
+<div class="container body">
+    <div class="main_container">
+        <div class="nav_menu">
+            <div class="nav_header">
+                <div class="entrance">
+                    <a title="moonlight" class="logo-href" href="#">
+                        <span class="logo">
+                            <img src="../images/logo.png">
+                        </span><span class="sep"></span><span style="font-size: 14px;">Moonlight</span>
+                    </a>
+                </div>
+                <h2>MoonLight可视化订单分析系统</h2>
+                <form>
+                    <label for="userName">用户名：</label>
+                    <input type = 'text' id="userName" class="username">
+                    <br>
+                    <label for="password">密&nbsp;&nbsp; 码：</label>
+                    <input type = 'password' id="password" class="password">
+                    <br>
+                    <input id="btn" class="btn-info" type="button" value="登录">
+                    <input id="btn1" class="btn-danger" type="button" value="重置">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <script type="text/javascript" src="/data_monitor/moonlight/static/js/jquery.min.js"></script>
 <script>
     $("#btn").click(function(){
-        window.open("/data_monitor/moonlight/static/html/index.html", '_self')
+        var userName = $("#userName").val();
+        var password = $("#password").val();
+        if(userName == "admin" && password == "123456"){
+            window.open("../html/index.html", '_self')
+        }else{
+            alert("您输入的信息有误！");
+        }
+    });
+    $("#btn1").click(function(){
+        $("#userName").val("");
+        $("#password").val("");
     })
 </script>
 </body>
