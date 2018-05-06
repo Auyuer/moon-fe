@@ -92,7 +92,7 @@ function getUrlParam(){
                 name: '订单数量',
                 type: 'line',
                 stack: '总量',
-                data: adata_total["total"]
+                data: Math.random(adata_total["total"])
             }
         ]
     };
