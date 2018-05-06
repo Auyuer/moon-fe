@@ -58,8 +58,8 @@ function getUrlParam(){
     /*日订单量图表展示区*/
     var chartName_total = echarts.init(document.getElementById("chart_total"));
     var adata_total=json_data.data;
-    var adata_option_data = Math.random()*adata_total["total"];
-    console.log(adata_total);
+    /*var adata_option_data = Math.random()*adata_total["total"];
+    console.log(adata_option_data);*/
     var option_total = {
         title: {
             text: '订单量分析'
