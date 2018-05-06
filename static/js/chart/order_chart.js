@@ -57,7 +57,8 @@ function getUrlParam(){
 
     /*日订单量图表展示区*/
     var chartName_total = echarts.init(document.getElementById("chart_total"));
-    var adata_total=Math.random()*json_data.data;
+    var adata_total=json_data.data;
+    var adata_option_data = Math.random()*adata_total["total"];
     console.log(adata_total);
     var option_total = {
         title: {
@@ -93,7 +94,7 @@ function getUrlParam(){
                 name: '订单数量',
                 type: 'line',
                 stack: '总量',
-                data: adata_total["total"]
+                data: adata_option_data
             }
         ]
     };
