@@ -58,6 +58,7 @@ function getUrlParam(){
     /*日订单量图表展示区*/
     var chartName_total = echarts.init(document.getElementById("chart_total"));
     var adata_total=json_data.data;
+    console.log(adata_total);
     var option_total = {
         title: {
             text: '订单量分析'
@@ -92,7 +93,7 @@ function getUrlParam(){
                 name: '订单数量',
                 type: 'line',
                 stack: '总量',
-                data: Math.random(adata_total["total"])
+                data: Math.random()*adata_total["total"]
             }
         ]
     };
@@ -135,7 +136,7 @@ function getUrlParam(){
                 name: '日盈利',
                 type: 'line',
                 stack: '总量',
-                data: adata_profit["profit"]
+                data: Math.random()*adata_profit["profit"]
             }
         ]
     };
@@ -180,7 +181,7 @@ function getUrlParam(){
                 name: '取消率',
                 type: 'line',
                 stack: '总量',
-                data: adata_cancelRatio["cancelRatio"]
+                data: Math.random()*adata_cancelRatio["cancelRatio"]
             }
         ]
     };
