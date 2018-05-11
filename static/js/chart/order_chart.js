@@ -102,6 +102,13 @@ function getUrlParam(){
     /*日盈利图表展示区*/
     var chart_profit = echarts.init(document.getElementById("chart_profit"));
     var adata_profit=json_data.data;
+
+    var profitData = adata_cancelRatio.profit;
+
+    for(var p = 0; p < profitData.length;p++ ){
+        profitData[p] = Math.random() * profitData[p];
+    }
+
     var option_profit = {
         title: {
             text: '日盈利分析'
@@ -136,7 +143,7 @@ function getUrlParam(){
                 name: '日盈利',
                 type: 'line',
                 stack: '总量',
-                data: adata_profit["profit"]
+                data: profitData
             }
         ]
     };
