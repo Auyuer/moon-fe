@@ -106,7 +106,7 @@ function getUrlParam(){
     var profitData = adata_profit.profit;
 
     for(var p = 0; p < profitData.length;p++ ){
-        profitData[p] = Math.random() * profitData[p];
+        profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
     }
 
     var option_profit = {
@@ -157,9 +157,9 @@ function getUrlParam(){
     var cancelData = adata_cancelRatio.cancelRatio;
 
     for(var c = 0; c < cancelData.length;c++ ){
-        cancelData[c] = Math.random() * cancelData[c];
+        cancelData[c] = Math.random() * (cancelData[c]+0.002 - cancelData[c]+1)+cancelData[c];
     }
-    console.log(cancelData);
+    //console.log(cancelData);
     var option_cancelRatio = {
         title: {
             text: '取消率分析'
