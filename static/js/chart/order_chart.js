@@ -103,7 +103,7 @@ function getUrlParam(){
     var chart_profit = echarts.init(document.getElementById("chart_profit"));
     var adata_profit=json_data.data;
 
-    var profitData = adata_cancelRatio.profit;
+    var profitData = adata_profit.profit;
 
     for(var p = 0; p < profitData.length;p++ ){
         profitData[p] = Math.random() * profitData[p];
