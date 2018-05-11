@@ -150,7 +150,7 @@ function getUrlParam(){
     var cancelData = adata_cancelRatio.cancelRatio;
 
     for(var c = 0; c < cancelData.length;c++ ){
-        cancalData[c] = Math.random() * cancelData[c];
+        cancelData[c] = Math.random() * cancelData[c];
     }
     console.log(cancelData);
     var option_cancelRatio = {
