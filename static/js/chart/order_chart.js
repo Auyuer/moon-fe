@@ -59,6 +59,12 @@ function getUrlParam(){
     var chartName_total = echarts.init(document.getElementById("chart_total"));
     var adata_total=json_data.data;
     /*var adata_option_data = Math.random()*adata_total["total"];*/
+    var totalData = adata_total.total;
+
+    for(var t = 0; t < totalData.length;t++ ){
+        //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
+        totalData[t] = Math.random() * totalData[t];
+    }
     var option_total = {
         title: {
             text: '订单量分析'
@@ -93,7 +99,7 @@ function getUrlParam(){
                 name: '订单数量',
                 type: 'line',
                 stack: '总量',
-                data: adata_total["total"]
+                data: totalData
             }
         ]
     };
@@ -106,7 +112,8 @@ function getUrlParam(){
     var profitData = adata_profit.profit;
 
     for(var p = 0; p < profitData.length;p++ ){
-        profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
+        //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
+        profitData[p] = Math.random() * profitData[p];
     }
 
     var option_profit = {
@@ -157,9 +164,9 @@ function getUrlParam(){
     var cancelData = adata_cancelRatio.cancelRatio;
 
     for(var c = 0; c < cancelData.length;c++ ){
-        cancelData[c] = Math.random() * (cancelData[c]+0.002 - cancelData[c]+1)+cancelData[c];
+        cancelData[c] = Math.random() * cancelData[c];
     }
-    console.log(cancelData);
+   // console.log(cancelData);
     var option_cancelRatio = {
         title: {
             text: '取消率分析'
