@@ -148,8 +148,11 @@ function getUrlParam(){
     var chart_cancelRatio = echarts.init(document.getElementById("chart_cancelRatio"));
     var adata_cancelRatio=json_data.data;
     var cancelData = adata_cancelRatio.cancelRatio;
-    console.log(cancelData);
 
+    for(var c = 0; c < cancelData.length;c++ ){
+        cancalData[c] = Math.random() * cancelData[c];
+    }
+    console.log(cancelData);
     var option_cancelRatio = {
         title: {
             text: '取消率分析'
@@ -184,7 +187,7 @@ function getUrlParam(){
                 name: '取消率',
                 type: 'line',
                 stack: '总量',
-                data: adata_cancelRatio["cancelRatio"]
+                data: cancelData
             }
         ]
     };
