@@ -58,8 +58,7 @@ function getUrlParam(){
     /*日订单量图表展示区*/
     var chartName_total = echarts.init(document.getElementById("chart_total"));
     var adata_total=json_data.data;
-    /*var adata_option_data = Math.random()*adata_total["total"];
-    console.log(adata_total);*/
+    /*var adata_option_data = Math.random()*adata_total["total"];*/
     var option_total = {
         title: {
             text: '订单量分析'
@@ -148,6 +147,9 @@ function getUrlParam(){
 
     var chart_cancelRatio = echarts.init(document.getElementById("chart_cancelRatio"));
     var adata_cancelRatio=json_data.data;
+    var cancelData = adata_cancelRatio.cancelRatio;
+    console.log(cancelData);
+
     var option_cancelRatio = {
         title: {
             text: '取消率分析'
