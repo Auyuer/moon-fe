@@ -159,7 +159,7 @@ function getUrlParam(){
     for(var c = 0; c < cancelData.length;c++ ){
         cancelData[c] = Math.random() * (cancelData[c]+0.002 - cancelData[c]+1)+cancelData[c];
     }
-    //console.log(cancelData);
+    console.log(cancelData);
     var option_cancelRatio = {
         title: {
             text: '取消率分析'
