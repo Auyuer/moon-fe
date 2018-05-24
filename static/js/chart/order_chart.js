@@ -63,7 +63,8 @@ function getUrlParam(){
 
     for(var t = 0; t < totalData.length;t++ ){
         //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
-        totalData[t] = Math.random() * totalData[t];
+        //totalData[t] = Math.random() * totalData[t];
+        totalData[t] = (Math.random()+ 9)/10  * totalData[t];
     }
     var option_total = {
         title: {
@@ -113,7 +114,8 @@ function getUrlParam(){
 
     for(var p = 0; p < profitData.length;p++ ){
         //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
-        profitData[p] = Math.random() * profitData[p];
+        //profitData[p] = Math.random() * profitData[p];
+        profitData[p] = (Math.random()+ 9)/10  * profitData[p];
     }
 
     var option_profit = {
