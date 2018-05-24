@@ -64,7 +64,7 @@ function getUrlParam(){
     for(var t = 0; t < totalData.length;t++ ){
         //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
         //totalData[t] = Math.random() * totalData[t];
-        totalData[t] = parseInt((Math.random()+ 7)/10 * totalData[t]);
+        totalData[t] = parseInt((Math.random()+ 5)/10 * totalData[t]);
     }
     var option_total = {
         title: {
@@ -116,7 +116,7 @@ function getUrlParam(){
         //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
         //profitData[p] = Math.random() * profitData[p];
 
-        profitData[p] = parseInt((Math.random()+ 7)/10  * profitData[p]);
+        profitData[p] = parseInt((Math.random()+ 5)/10  * profitData[p]);
 
     }
     console.log(profitData);
@@ -167,9 +167,9 @@ function getUrlParam(){
     var adata_cancelRatio=json_data.data;
     var cancelData = adata_cancelRatio.cancelRatio;
 
-    //for(var c = 0; c < cancelData.length;c++ ){
-    //    cancelData[c] = parseInt((Math.random()+9)/10 * cancelData[c]);
-    //}
+    for(var c = 0; c < cancelData.length;c++ ){
+        cancelData[c] = parseInt((Math.random())/1000 * cancelData[c]);
+    }
    // console.log(cancelData);
     var option_cancelRatio = {
         title: {
