@@ -115,7 +115,9 @@ function getUrlParam(){
     for(var p = 0; p < profitData.length;p++ ){
         //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
         //profitData[p] = Math.random() * profitData[p];
+        console.log(profitData[p]);
         profitData[p] = (Math.random()+ 9)/10  * profitData[p];
+        console.log(profitData[p]);
     }
 
     var option_profit = {
