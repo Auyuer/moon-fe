@@ -46,7 +46,7 @@ function tabData_show(){
 
 
     /*删除数据*/
-    delete_data()
+    delete_data();
     function delete_data(){
         $(".btn_delete").click(function(){
             if(confirm("是否确认删除？")){

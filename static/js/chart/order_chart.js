@@ -29,7 +29,7 @@ function getUrlParam(){
         //json_data=send_get("/data_monitor/moonlight/circle?point=" + circle_lat + "," + circle_lng + "&radius=" + circle_r);
         json_data = send_get("/data_monitor/moonlight/static/mock/circle.txt");
         json_data = JSON.parse(json_data);
-        console.log(json_data);
+        //console.log(json_data);
     }else{
         /*截取url中等号右边的参数*/
         var paramSqual=params.split("=");
@@ -48,7 +48,7 @@ function getUrlParam(){
         //json_data=send_get(url_getSqual);
         json_data = send_get("/data_monitor/moonlight/static/mock/polygon.txt");
         json_data = JSON.parse(json_data);
-        console.log(json_data);
+       // console.log(json_data);
     }
 
 
@@ -64,7 +64,7 @@ function getUrlParam(){
     for(var t = 0; t < totalData.length;t++ ){
         //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
         //totalData[t] = Math.random() * totalData[t];
-        totalData[t] = (Math.random()+ 9)/10  * totalData[t];
+        totalData[t] = parseInt((Math.random()+ 9)/10 * totalData[t]);
     }
     var option_total = {
         title: {
@@ -111,15 +111,15 @@ function getUrlParam(){
     var adata_profit=json_data.data;
 
     var profitData = adata_profit.profit;
-
+    console.log(profitData);
     for(var p = 0; p < profitData.length;p++ ){
         //profitData[p] = Math.random() * (profitData[p] + 100000 - profitData[p] + 1) + profitData[p];
         //profitData[p] = Math.random() * profitData[p];
-        console.log(profitData[p]);
-        profitData[p] = (Math.random()+ 9)/10  * profitData[p];
-        console.log(profitData[p]);
-    }
 
+        profitData[p] = parseInt((Math.random()+ 9)/10  * profitData[p]);
+
+    }
+    console.log(profitData);
     var option_profit = {
         title: {
             text: '日盈利分析'
@@ -168,7 +168,7 @@ function getUrlParam(){
     var cancelData = adata_cancelRatio.cancelRatio;
 
     for(var c = 0; c < cancelData.length;c++ ){
-        cancelData[c] = Math.random() * cancelData[c];
+        cancelData[c] = parseInt((Math.random()+9)/10 * cancelData[c]);
     }
    // console.log(cancelData);
     var option_cancelRatio = {
